@@ -1,0 +1,68 @@
+\documentclass[10pt, a4paper]{article}
+
+\title{\LaTeX\ Assignment 1: Basic Text and Mathematics}
+\author{S. Oosthuizen, 20789629}
+\date{10 March 2020}
+
+\begin{document}
+\maketitle
+\section{Instructions}
+Type \textit{exactly} what you see here.\footnote{Remember that we specify logical markup in \LaTeX. So, we do not use the \texttt{textit} com\-mand to emphasise text} Use the \texttt{article} class with the \texttt{10pt} and \texttt{a4paper} options; \textit{do not use any other packages}. There are, however, two re\-quired changes: Substitute your initials, surname, and student number for mine in the title; and set the date to the due date--be careful not to use the "current" system date.\par
+Most of the examples are a bit forced. We'll see things like \underline{underlined text},\\
+which we use rarely outside math mode. However, we'll worry about \textbf{substance}
+-- and \textbf{stye!} -- later.\footnote{Pay attention to unwanted end-of-sentence spacing in this sentence. Actually, check end\-of-sentence punctuation throughout the document.}
+
+\paragraph{Submission}The results for these assignments constitute your mark for the\linebreak
+\LaTeX\ part of the module.\footnote{The “heading” for this paragraph was made with the \texttt{paragraph} command.} Refer to the course  website for details. \textsc{In par-}\linebreak \textsc{ticular, note} that you have to submit both your \texttt{.tex} and \texttt{.pdf} files  as an\linebreak archive on the module website, and that you have to \textit{print out, complete, sign, and submit the plagerism form to the lecturer}. If you do not follow all of the\linebreak submission instructions, your submission will not be marked. If your submitted \texttt{.tex} file does not compile successfully on Ubuntu in Narga, you get zero.
+
+\section{Mathematics}
+One of the many strong suits of \TeX\ and \LaTeX\ is how well they handle the\linebreak typesetting of mathematics. Of course, to start, many of the equations in \S2.1, \S2.2, \S2.3, \S2.4, and \S2.5 are complete nonsense.\footnote{The numeric references in this sentence were made automatically with the \texttt{label} and \texttt{ref} commands.  It is a good idea to preface the different classes of labels with class-identifying\linebreak strings, each followed by a colon.  For example, I have used “\texttt{sec:}”  for section labels, so that the\linebreak full label for \S2.4 is '\texttt{sec:fractions}'.}
+
+\subsection{Symbols}
+To many people, mathematics is Greek. Up to a point, they are correct: We do\linebreak use a lot of Greek symbols, for example, $\alpha$, $\beta$, $\Gamma$, $\Delta$, $\chi$, and $\Omega$. Note that the
+spaces before and after the commas in the previous list imply that \textit{we do notuse only one math environment}.\par Let's do a bit of Physics. Everybody should know about the time-dependent\linebreak Schr\"odinger equation:
+\[i \hbar \frac{\partial}{\partial t} \Psi = \widehat{H}\Psi .\]
+A famous example is the non-relativistic Schrodinger equation for a single particle moving in an electric field:
+\[i \hbar \frac{\partial}{\partial t} \Psi (\mathbf{r},t) = \left[\frac{-\hbar^2}{2\mu}\nabla^2 + V(\mathbf{r},t)\right]\Psi(\mathbf{r},t).\]\par
+
+For displayed mathematics, we keep the punctuation inside the math envi-ronment, but for mathematics in running text, we put the punctuation outside\linebreak the math environment. Keep an eye out for paragraph breaks. It should be as\linebreak easy as 1, 2, 3, \ldots .
+
+\subsection{Superscripts and Subscripts}
+Let’s consider something weird, like
+\[x^2 + y^\frac{w}{v} \stackrel{\infty}{\longrightarrow} x^{x^{x^{x}}}.\]
+Or we try to integrate thus:\\
+\[\int^{3}_{1}\frac{x^3-x^4}{f'(x)g(x)}dx\]
+Being students in the mathematical sciences, this formatting should look familiar from your exam papers in applied mathematics, computer science, and pure\linebreak mathematics... maybe even operations research and mathematical statistics.\par
+Maybe, we can borrow some notation from the theory around the Euler\-Maclaurin formula, for example,
+\[S-I=\sum^{p}_{k=1}\frac{B_k}{k!}\left(f^{(k-1)}(n)-f^{(k-1)}(m)\right)+R\]
+We could try to talk about the remainder R, and get
+\[\left| R\right| \leq\frac{2\zeta(2p)}{(2\pi)^{2p}}\int^{n}_{m}\left| f^{(2p)}(x)\right| dx.\]
+Just as easily:
+\[\sum^{\infty}_{k=0}\frac{1}{(z+k)^2}~\underbrace{\int^{\infty}_{0}\frac{1}{(z+k)^2}dk}_{=\frac{1}{2}}+\frac{1}{2z^2}+\sum^{\infty}_{t=1}\frac{B_{2t}}{z^{2t+1}}\]
+What about a bit of Cauchy?
+\[\left|\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-a}dz-f(a)\right|\leq\displaystyle\max_{\left|z-a\right|=\epsilon}\left|f(z)-f(a)\right|\stackrel{\epsilon\rightarrow 0}{\longrightarrow}0.\]
+
+\subsection{Operations}
+Consider the following equations:
+\[\sum^{n}_{i=1}\frac{n!(2n\sqrt{y})}{5i^2}\ll\displaystyle\lim_{x\rightarrow{\infty}}\phi(x)\mbox{, and}\]\\
+\[\int^{b}_{a}f(x)dx\geq\displaystyle\lim_{x\rightarrow\infty}f(x_i)\frac{b-1}{n}.\]
+Note the judicious use of the \texttt{mbox} command and thin spaces.
+
+\subsection{Fractions}
+Let’s see what we can do with fractions.
+\[\frac{\frac{2\alpha}{x^y}+x^y}{x^{y}_{1}\div\frac{\sqrt{6}}{4+k}}\!\Rightarrow\!\exists\:k:k<1\%\]
+Or, what about the following?
+\[\sqrt{\frac{f(x)}{\frac{g(x)}{x^2}-1}+1}=\sqrt[5]{\frac{f^2(x)}{\sqrt{g(x)!}}}\]
+\subsection{Mixed Mathematical Structures}
+\[u_1(x_1)\neq u_0(x_0)+\frac{(x_1-x_0)^2}{5!}f''(\xi)\]
+For which values will the following be true?
+\[x_1+x_2+x_3+\ldots+x_n=x_1\cdot x_2\cdot x_3\ldots x_n\]
+Solve the next inequality:
+\[\sum^{\infty}_{\alpha=1}x^{\alpha}=\left.\oint^{d}_{c}f(x)dx\leq\prod_{\gamma=1}^\Theta\frac{f'''(x)}{\sqrt{(n+1)!}} \right|_{x=\lfloor x_0\rfloor}\]
+if you think the previous equation was difficult to type, try the next one:
+\[\left\lfloor\bigcap^{\o}_{j=1}\int^{\infty}_{\infty}\arccos\left(\frac{\nabla\widetilde{x\pi_{i}y}}{x\underline{y}x}\right)\right\rfloor^{\infty}_{j=1}\]\par
+Compare the indents of the text lines above to those of \S2.2. The difference\linebreak in indentation was accomplished simply by starting a new paragraph.
+
+
+
+\end{document}
