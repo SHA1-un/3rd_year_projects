@@ -2,19 +2,25 @@ import sys
 
 def main(dataword):
     codeword = parse(dataword)
-    print("Input: {}".format(codeword))
+    print("Input: {}\n".format(codeword))
+    non_pow_2_bit = "b8   b4   b2   b1"
     bit_postion = 1
     calc_parity_arr = []
+    bit_names = []
     for element in codeword:
         bit = int(element)
         if bit == 1:
             bin_pos = format(bit_postion, '04b')
             bin_pos_arr = [bin_pos[0], bin_pos[1], bin_pos[2], bin_pos[3]]
             calc_parity_arr.append(bin_pos_arr)
+            bit_names.append("b{}".format(bit_postion))
 
         bit_postion += 1
+    print("{:>23}".format(non_pow_2_bit))
+    i = 0
     for element in calc_parity_arr:
-        print(element)
+        print("{:<4}{}".format(bit_names[i], element))
+        i += 1
     calc_par_dig = do_xor(calc_parity_arr)
     print("XOR {}".format(calc_par_dig))
 
