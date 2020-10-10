@@ -17,7 +17,7 @@ def main(decimal):
     #formatted_bin = moveDecimalPoint(float(dec_bin_num), dec_places)
     print("Decimal in binary is {}".format(dec_bin_num))
     formatted_bin = input("Bin after shifted dot (NOTE: shifting right is neg):\n")
-    dec_places = input("Num of places moved: \n")
+    dec_places = input("Num of places Shifted: \n")
 
     print("we have {} base 10 = ({}/{}) base 2 = {} x 2^{}\n".format(dec_as_frac, bin(upper), bin(lower), formatted_bin, dec_places))
 
