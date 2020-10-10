@@ -6,11 +6,11 @@ import binascii
 def main(bitstring, has_bin):
     # Code to convert hex to binary
     n = int(bitstring, 16)
-    has_bin = bool(has_bin)
-    if has_bin:
+    print(has_bin)
+    if int(has_bin) == 1:
         res = get_bin(n)
     else:
-        res = input("Can't compute manually, input Binary:\n")
+        res = input("Can't compute manually input Binary:\n")
 
     sign = res[0]
     bit_exp_8 = res[1:9]
