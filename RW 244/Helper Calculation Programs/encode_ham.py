@@ -29,7 +29,7 @@ def main(dataword):
     codeword[3] = calc_par_dig[1]
     codeword[7] = calc_par_dig[0]
 
-    print("Codeword: {}".format(codeword))
+    print("Encoded Codeword: {}".format(codeword))
 
 def do_xor(arr):
     xor_arr = []

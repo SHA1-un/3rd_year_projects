@@ -42,7 +42,7 @@ def main(codeword):
     faulty_bit = int(bin_str, 2)
 
     if faulty_bit == 0:
-        print("Dataword {}".format(dataword))
+        print("Decoded Dataword {}".format(dataword))
     else:
         print("Faulty Bit: {}".format(faulty_bit))
         codeword[faulty_bit-1] ^= codeword[faulty_bit-1]
@@ -53,7 +53,7 @@ def main(codeword):
             if not (bit_postion == 1 or bit_postion == 2 or bit_postion == 4 or bit_postion == 8):
                 dataword.append(element)
             bit_postion += 1
-        print("New Dataword {}".format(dataword))
+        print("New decoded Dataword {}".format(dataword))
 
 
 def parse(codeword):

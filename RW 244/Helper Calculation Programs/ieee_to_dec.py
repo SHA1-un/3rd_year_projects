@@ -1,15 +1,17 @@
 import sys
 import math
 import struct
+import binascii
 
-def main(bitstring):
+def main(bitstring, has_bin):
     # Code to convert hex to binary
     n = int(bitstring, 16)
-    bStr = ''
-    while n > 0:
-        bStr = str(n % 2) + bStr
-        n = n >> 1
-    res = bStr
+    has_bin = bool(has_bin)
+    if has_bin:
+        res = get_bin(n)
+    else:
+        res = input("Can't compute manually, input Binary:\n")
+
     sign = res[0]
     bit_exp_8 = res[1:9]
     bit_signi_23 = res[9:]
@@ -36,7 +38,15 @@ def main(bitstring):
 
     if int(sign) == 1:
         dec_num = -1 * factor_d * math.pow(2, exponent)
+    else:
+        dec_num = factor_d * math.pow(2, exponent)
     print("Decimal number: {}".format(dec_num))
 
+def get_bin(n):
+    bStr = ''
+    while n > 0:
+        bStr = str(n % 2) + bStr
+        n = n >> 1
+    return bStr
 if __name__ == '__main__':
-    main(sys.argv[1])
+    main(sys.argv[1], sys.argv[2])
