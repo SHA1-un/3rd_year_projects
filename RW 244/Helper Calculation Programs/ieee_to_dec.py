@@ -37,8 +37,10 @@ def main(bitstring, has_bin):
     print("factor_d = {}".format(factor_d))
 
     if int(sign) == 1:
+        print("Decimal number = -1 x {} x 2^{}".format(factor_d, exponent))
         dec_num = -1 * factor_d * math.pow(2, exponent)
     else:
+        print("Decimal number = {} x s^{}".format(factor_d, exponent))
         dec_num = factor_d * math.pow(2, exponent)
     print("Decimal number: {}".format(dec_num))
 
